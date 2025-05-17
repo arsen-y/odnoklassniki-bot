@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Set Ac</title>
+	<script type="text/javascript" src="/func.js"></script>
+	<script>
+
+		function gi(elem) {
+			return document.getElementById(elem);
+		}
+
+		async function send_new_req() {
+
+			let response = null
+			let resParsed = null
+
+			var data = new FormData();
+			data.append("sData", gi('sData').value);
+
+			try {
+
+				response = await fetch('/ajax_set_cmd.php', { mode: 'no-cors', method: 'POST', body: data });
+				console.log(response)
+				resParsed = await response.text();
+
+			} catch (e) {
+
+				console.log(e.message)
+				gi('data').innerHTML += '<br>Error: ' + parse_text_htmlspch(get_err_mes); 
+				setTimeout(send_new_req, 30000);
+				return
+
+			}
+
+			gi('data').innerHTML = resParsed;
+
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<textarea name="sData" id="sData" cols="35" rows="10">
+
+</textarea>
+
+	<p><input type="button" name="start" value="Start" onclick="send_new_req();" /></p>
+
+	<div id="data">
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Proxy Statistics Submission</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Embedded CSS for styling -->
+	<style>
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-color: #f5f7fa;
+			margin: 0;
+			padding: 0;
+			color: #333;
+		}
+
+		.container {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 40px 20px;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 30px;
+			color: #007BFF;
+		}
+
+		form {
+			background-color: #ffffff;
+			padding: 30px;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		label {
+			font-size: 16px;
+			margin-bottom: 10px;
+			display: block;
+			font-weight: bold;
+		}
+
+		textarea {
+			width: 100%;
+			height: 150px;
+			padding: 12px;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			resize: vertical;
+			font-size: 14px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		textarea::placeholder {
+			color: #aaa;
+		}
+
+		button {
+			background-color: #007BFF;
+			color: #ffffff;
+			padding: 14px 20px;
+			border: none;
+			border-radius: 4px;
+			font-size: 16px;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+		}
+
+		.note {
+			font-size: 14px;
+			color: #555;
+			margin-top: 20px;
+			text-align: center;
+		}
+
+		.icon {
+			width: 50px;
+			height: 50px;
+			display: block;
+			margin: 0 auto 20px auto;
+		}
+
+		@media (max-width: 480px) {
+			.container {
+				padding: 20px 10px;
+			}
+
+			h1 {
+				font-size: 24px;
+			}
+
+			label {
+				font-size: 14px;
+			}
+
+			button {
+				font-size: 14px;
+				padding: 12px 16px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<!-- SVG Icon -->
+		<svg class="icon" viewBox="0 0 64 64" fill="#007BFF" xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M32 4C17.641 4 6 15.641 6 30c0 11.873 8.257 21.825 19.219 24.25l.781.156V58h-6v4h20v-4h-6v-3.594l.781-.156C49.743 51.825 58 41.873 58 30 58 15.641 46.359 4 32 4zm0 48c-4.406 0-8-3.594-8-8h16c0 4.406-3.594 8-8 8zm11.938-12H20.062C15.504 36 12 32.496 12 28s3.504-8 8.062-8h23.876C48.496 20 52 23.504 52 28s-3.504 8-8.062 8z" />
+		</svg>
+		<h1>Submit Proxy List</h1>
+		<form action="/proxy_stat.php" method="post">
+			<label for="proxy_list">Enter your proxies (one per line):</label>
+			<textarea name="proxy_list" id="proxy_list"
+				placeholder="proxy1.example.com:8080&#10;proxy2.example.com:8080&#10;proxy3.example.com:8080"
+				required></textarea>
+			<button type="submit">Get Statistics</button>
+		</form>
+		<p class="note">Your proxy list will be processed to display detailed statistics.</p>
+	</div>
+</body>
+
+</html>
