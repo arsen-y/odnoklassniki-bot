@@ -1,3 +1,9 @@
+/*
+OkBot
+Арсений Соколовский
+tg @yodajackson
+*/
+
 const Db = require('mysql2-async').default
 const { sleepProm } = require('./helpers/sleepProm')
 var childProcess = require('child_process')
